@@ -1,0 +1,21 @@
+data:
+  root: null
+  train_val_split_ratio: 0.8
+  batch_size: 4
+  shuffle: true
+  train_transforms:
+    - name: Resize
+      params: {size: [224, 224]}
+    - name: RandomHorizontalFlip
+      params: {}
+    - name: ToTensor
+      params: {}
+    - name: Normalize
+      params: {mean: [0.485, 0.456, 0.406], std: [0.229, 0.224, 0.225]}
+  val_transforms:
+    - name: Resize
+      params: {size: [224, 224]}
+    - name: ToTensor
+      params: {}
+    - name: Normalize
+      params: {mean: [0.485, 0.456, 0.406], std: [0.229, 0.224, 0.225]}
